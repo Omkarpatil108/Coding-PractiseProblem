@@ -13,18 +13,16 @@ class Solution{
     public:
     vector<int> leaders(int a[], int n){
         // Code here
-        vector<int> ans;
-
-        int maxi = INT_MIN;
-        for (int i = n - 1; i >= 0; i--) {
-            if (a[i] >= maxi) {
-                ans.push_back(a[i]);
-                maxi = a[i];
+         vector<int>s;
+        int t=INT_MIN;
+        for(int i=n-1;i>=0;i--){
+            if(a[i]>=t){
+                s.push_back(a[i]);
+                t=a[i];
             }
         }
-        reverse(ans.begin(), ans.end()); // Reversing the vector to get elements in the original order
-        return ans;
-        
+        reverse(s.begin(),s.end());
+        return s;
     }
 };
 
