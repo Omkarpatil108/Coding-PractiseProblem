@@ -9,50 +9,27 @@ class Solution{
     // Function to find equilibrium point in the array.
     // a: input array
     // n: size of array
-     int equilibriumPoint(long long a[], int n){
-        
+    int equilibriumPoint(long long a[], int n) {
     
-    // if (n == 1) return 0; 
-    
-    // if (n == 2) {
-    //     if (a[0] == a[1]) return 0; 
+        if(n==1)
+        return 1;
         
-    //     else return -1; 
+        long long sum = 0 ;
+        for( int i = 0 ; i<n ;i++)
+        {
+            sum+=a[i];
+        }
         
-    // }
-
-//     long long leftsum = 0;
-//     long long sum = 0;
-//     for (int i = 0; i < n; ++i) {
-//         sum += a[i];
-//     }
-
-//     for (int i = 0; i < n; ++i) {
-//         sum -= a[i];
-
-//         if (leftsum == sum)
-//             return i;
-
-//         leftsum += a[i];
-//     }
-
-//     return -1; // If no equilibrium index is found, return -1
-
-
-// }
-
-         long long tosum=0;
-    long long sum=0;
-    for(int i=0;i<n;i++){
-       tosum+=a[i];
-    }
-    for(int i=0;i<n;i++){
-        if(tosum-sum==a[i]+sum) return i+1;
-       sum+=a[i];
-    }
-    return -1;
-        
-        
+        long long lsum=0;
+        for( int i = 0; i<n ;i++)
+     {
+         if(lsum == sum-a[i])
+         return i+1;
+         
+         lsum +=a[i];
+         sum -= a[i];
+     }
+     return -1;
     }
 
 };
