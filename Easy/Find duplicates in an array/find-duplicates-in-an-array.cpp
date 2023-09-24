@@ -6,30 +6,34 @@ using namespace std;
 class Solution{
   public:
     vector<int> duplicates(int arr[], int n) {
-        // code here
-        vector<int>ans ;
-        
-        sort(arr, arr +n ) ;
-        
-        int res =1 ;
-        for (int i = 1 ; i < n ; i++ ){
-            if ((arr[i] == arr[ i -1 ]) && (arr[i]  != arr[i+1])) {
-                ans.push_back(arr[i]) ;
-                res = i ;
-               
+        // sort(arr,arr+n);
+        // vector<int>ans;
+        // for(int i=0;i<n-1;i++)
+        // {
+        //     if(arr[i]==arr[i+1])   //1 2 2 2 3 3
+        //     {
+        //         if (find(ans.begin(), ans.end(), arr[i]) == ans.end())
+        //         {
+        //             ans.push_back(arr[i]);
+        //         }
+        //     }
+        // }
+        // return ans;
+        vector<int>ans;
+        int freq[n] = {0};
+        for(int i=0;i<n;i++){
+            freq[arr[i]]++;
+        }
+        for(int i=0;i<n;i++) {
+            if(freq[i] > 1) {
+                ans.push_back(i);
             }
-            else {
-                res ++ ;
-            }
-        
         }
-        if(ans.empty() ){
-            return {-1} ;
+        if(ans.empty()) {
+            ans.push_back(-1);
         }
-        else{
-            
-            return ans ; 
-        }
+ 
+        return ans;
     }
 };
 
