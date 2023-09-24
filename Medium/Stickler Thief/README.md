@@ -12,5 +12,5 @@ a[] = {1,5,3}
 <strong>Output: <br></strong>5
 <strong>Explanation: <br></strong>Loot only 2nd house and get maximum amount of 5.</span></pre>
 <p><span style="font-size: 18px;"><strong>Your Task:</strong><br>Complete the function<strong>FindMaxSum() </strong>which takes an array <strong>arr[]</strong> and <strong>n</strong> as input which returns the maximum money he can get following the rules.</span></p>
-<p><span style="font-size: 18px;"><strong>Expected Time Complexity:</strong>O(N).<br><strong>Expected Space Complexity:</strong>O(N).</span></p>
+<p><span style="font-size: 18px;"><strong>Expected Time Complexity:</strong>O(N).<br><strong>Expected Space Complexity:</strong>O(1).</span></p>
 <p><span style="font-size: 18px;"><strong>Constraints:</strong><br>1 ≤ n ≤ 10<sup>5</sup><br>1 ≤ a[i] ≤ 10<sup>4</sup></span></p></div><p><span style=font-size:18px><strong>Company Tags : </strong><br><code>Paytm</code>&nbsp;<code>Flipkart</code>&nbsp;<code>Amazon</code>&nbsp;<code>OYO Rooms</code>&nbsp;<code>Walmart</code>&nbsp;<code>Google</code>&nbsp;<br><p><span style=font-size:18px><strong>Topic Tags : </strong><br><code>Arrays</code>&nbsp;<code>Dynamic Programming</code>&nbsp;<code>Data Structures</code>&nbsp;<code>Algorithms</code>&nbsp;
