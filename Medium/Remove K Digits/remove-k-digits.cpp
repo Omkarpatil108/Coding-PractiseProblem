@@ -10,52 +10,29 @@ using namespace std;
 class Solution {
   public:
     string removeKdigits(string S, int K) {
-          int n = S.size();
-    stack<char> st;
-    int i;
-   for(i = 0 ;i <n;i++)
-    {
-        if(st.size() == 0 || st.top() <= S[i] || K==0)
-        {
-            st.push(S[i]);
-        }
-        else {
-            while(st.size()!=0 && st.top() > S[i] && K!=0)
-                {
-                    st.pop();
-                    K--;
-                }
-            st.push(S[i]);
+        if(K==S.size()) return "0";
+        string str="";
+        for(int i=0;i<S.size();i++){
+            while(str.size()>0&&K>0&&str.back()>S[i]){
+                str.pop_back();
+                K--;
+            }
+            str+=S[i];
+            
         }
         
-        if(st.size()==1 && st.top()=='0')
-            st.pop();
+        while(K>0&&str.size()>0){
+            str.pop_back();
+            K--;
+        }
+          int i=0;
+         while(str[i]=='0' && i<str.size()){
+           i++;
+       }
+      
+        if(i==str.size()) return "0";
+        return str.substr(i);
     }
-    if(st.size() == 0)
-        return "0";
-    
-    while(!st.empty() && K!=0)
-    {
-        st.pop();
-        if(st.size()==0)
-            return "0";
-        K--;
-    }
-    
-    
-     while(!st.empty()){
-         
-         S[n-1] = st.top();
-         st.pop();
-         n--;
-         
-     }
-     return S.substr(n);
-    
-    }
-
-
-
 };
 
 //{ Driver Code Starts.
